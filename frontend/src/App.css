@@ -1,0 +1,724 @@
+/* =========================================================
+   TOURVISTA — GLOBAL
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #141510;
+  color: #eee9dc;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.navbar {
+  min-height: clamp(4rem, 6vw, 4.75rem);
+  padding-inline: clamp(1.25rem, 7vw, 7rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.0625rem solid #303129;
+}
+
+.logo {
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2.5vw, 2rem);
+}
+
+.navbar a {
+  color: #898a80;
+  text-decoration: none;
+  font-size: clamp(0.75rem, 1vw, 0.875rem);
+  transition: color 0.2s ease;
+}
+
+.navbar a:hover {
+  color: #eee9dc;
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+main {
+  width: min(92%, 70rem);
+  margin-inline: auto;
+  padding-block: clamp(4rem, 8vw, 6.5rem) clamp(5rem, 10vw, 8rem);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  width: min(100%, 48rem);
+  margin-inline: auto;
+  margin-bottom: clamp(2.75rem, 6vw, 4rem);
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 clamp(0.75rem, 2vw, 1.125rem);
+  color: #a8a398;
+  font-size: clamp(0.625rem, 0.8vw, 0.6875rem);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.hero h1 {
+  margin: 0 0 clamp(1.25rem, 3vw, 1.75rem);
+  color: #eee9dc;
+  font-size: clamp(3rem, 7vw, 5.25rem);
+  line-height: 0.96;
+  letter-spacing: -0.065em;
+  font-weight: 700;
+}
+
+.hero-text {
+  width: min(100%, 34rem);
+  margin-inline: auto;
+  color: #898a80;
+  font-size: clamp(0.95rem, 1.5vw, 1.125rem);
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   PLANNER
+   ========================================================= */
+
+.planner-card {
+  width: min(100%, 48rem);
+  margin-inline: auto;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  background: #1b1c18;
+  border: 0.0625rem solid #3a3b34;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.5rem, 1vw, 0.625rem);
+  margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+.form-group label {
+  color: #d6d2ca;
+  font-size: clamp(0.75rem, 1vw, 0.8125rem);
+  font-weight: 700;
+}
+
+.form-group input {
+  width: 100%;
+  min-width: 0;
+  padding: clamp(0.75rem, 2vw, 1rem);
+  border: 0.0625rem solid #41423b;
+  border-radius: 0.125rem;
+  outline: none;
+  background: #151611;
+  color: #eee9dc;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.form-group input::placeholder {
+  color: #686a62;
+}
+
+.form-group input:hover {
+  border-color: #66675f;
+}
+
+.form-group input:focus {
+  border-color: #a76b55;
+  background: #181914;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,
+      minmax(min(100%, 14rem), 1fr));
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+}
+
+
+/* =========================================================
+   INTERESTS
+   ========================================================= */
+
+.interest-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(0.45rem, 1vw, 0.6rem);
+}
+
+.interest {
+  padding: clamp(0.55rem, 1.5vw, 0.7rem) clamp(0.7rem, 1.8vw, 0.95rem);
+  border: 0.0625rem solid #45463f;
+  border-radius: 0.125rem;
+  background: transparent;
+  color: #bcb8b0;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.interest:hover {
+  border-color: #77786f;
+  color: #eee9dc;
+}
+
+.interest.selected {
+  background: #c47a61;
+  border-color: #c47a61;
+  color: #171510;
+}
+
+
+/* =========================================================
+   GENERATE BUTTON
+   ========================================================= */
+
+.generate-button {
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: clamp(0.85rem, 2vw, 1.1rem);
+  border: none;
+  border-radius: 0.125rem;
+  background: #c47a61;
+  color: #171510;
+  font-size: clamp(0.8rem, 1vw, 0.875rem);
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease;
+}
+
+.generate-button:hover {
+  background: #d18a70;
+}
+
+.generate-button:active {
+  transform: translateY(0.0625rem);
+}
+
+.generate-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   ERRORS
+   ========================================================= */
+
+.error {
+  margin: -0.3125rem 0 clamp(1rem, 2vw, 1.25rem);
+  color: #d58b83;
+  font-size: clamp(0.8rem, 1vw, 0.875rem);
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.loading-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.5rem, 1.5vw, 0.75rem);
+  margin: -0.3125rem 0 clamp(1rem, 2vw, 1.25rem);
+}
+
+.loading-message p {
+  margin: 0;
+  color: #898a80;
+  font-size: clamp(0.75rem, 1vw, 0.8125rem);
+}
+
+.loading-line {
+  width: clamp(1.125rem, 3vw, 2rem);
+  height: 0.0625rem;
+  background: #c47a61;
+  animation: loading-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes loading-pulse {
+
+  0%,
+  100% {
+    opacity: 0.3;
+    width: clamp(1.125rem, 3vw, 1.5rem);
+  }
+
+  50% {
+    opacity: 1;
+    width: clamp(1.5rem, 4vw, 2rem);
+  }
+}
+
+
+/* =========================================================
+   RESULTS
+   ========================================================= */
+
+.results {
+  width: 100%;
+  margin-top: clamp(5rem, 10vw, 7rem);
+}
+
+.section-heading {
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
+  text-align: center;
+}
+
+.section-heading h2 {
+  margin: 0;
+  color: #eee9dc;
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+
+/* =========================================================
+   TRIP SUMMARY
+   ========================================================= */
+
+.trip-summary {
+  width: min(100%, 52rem);
+  margin: 0 auto clamp(2rem, 4vw, 2.75rem);
+  padding-bottom: clamp(1.5rem, 3vw, 2rem);
+  border-bottom: 0.0625rem solid #3a3b34;
+  text-align: center;
+}
+
+.summary-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.summary-main h2 {
+  margin: 0 0 clamp(0.5rem, 1vw, 0.75rem);
+  color: #eee9dc;
+  font-size: clamp(2.25rem, 6vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.summary-meta {
+  margin: 0;
+  color: #898a80;
+  font-size: clamp(0.8rem, 1.2vw, 0.95rem);
+}
+
+.summary-interests {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(0.4rem, 1vw, 0.5rem);
+  margin-top: clamp(1rem, 2vw, 1.25rem);
+}
+
+.summary-interests span {
+  display: inline-block;
+  padding: clamp(0.4rem, 1vw, 0.5rem) clamp(0.55rem, 1.2vw, 0.7rem);
+  border: 0.0625rem solid #4b4c44;
+  border-radius: 0.125rem;
+  color: #b8b4aa;
+  font-size: clamp(0.65rem, 0.9vw, 0.75rem);
+  line-height: 1;
+}
+
+
+/* =========================================================
+   ITINERARY
+   ========================================================= */
+
+.itinerary {
+  width: 100%;
+}
+
+.itinerary .section-heading {
+  width: min(100%, 52rem);
+  margin-inline: auto;
+}
+
+.days {
+  width: min(100%, 52rem);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.75rem, 2vw, 1rem);
+}
+
+.day-card {
+  display: grid;
+  grid-template-columns: minmax(6rem, 9rem) minmax(0, 1fr);
+  background: #1b1c18;
+  border: 0.0625rem solid #3a3b34;
+}
+
+.day-number {
+  padding: clamp(1.25rem, 3vw, 1.8rem) clamp(0.75rem, 2vw, 1.25rem);
+  border-right: 0.0625rem solid #3a3b34;
+  color: #96978e;
+  font-size: clamp(0.6rem, 0.8vw, 0.7rem);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.day-content {
+  min-width: 0;
+  padding-inline: clamp(1rem, 3vw, 1.75rem);
+}
+
+.place {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: clamp(1rem, 3vw, 2rem);
+  padding-block: clamp(1rem, 2.5vw, 1.5rem);
+  border-bottom: 0.0625rem solid #303129;
+}
+
+.place:last-child {
+  border-bottom: none;
+}
+
+.place-info {
+  min-width: 0;
+}
+
+.place h3 {
+  margin: 0 0 clamp(0.3rem, 0.8vw, 0.4rem);
+  color: #eee9dc;
+  font-size: clamp(0.95rem, 1.5vw, 1.125rem);
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+.place-address {
+  margin: 0;
+  color: #70726a;
+  font-size: clamp(0.7rem, 1vw, 0.8125rem);
+  line-height: 1.5;
+}
+
+.place-reason {
+  width: min(100%, 37.5rem);
+  margin: clamp(0.5rem, 1vw, 0.7rem) 0 0;
+  color: #a19d95;
+  font-size: clamp(0.7rem, 1vw, 0.8125rem);
+  line-height: 1.5;
+}
+
+.place-score {
+  flex: 0 0 clamp(3rem, 6vw, 4rem);
+  padding-left: clamp(0.6rem, 1.5vw, 1rem);
+  border-left: 0.0625rem solid #3a3b34;
+  text-align: right;
+}
+
+.place-score span {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: #6d6e67;
+  font-size: clamp(0.55rem, 0.75vw, 0.625rem);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.place-score strong {
+  color: #c47a61;
+  font-size: clamp(0.95rem, 1.5vw, 1.125rem);
+  font-weight: 700;
+}
+
+.empty-day {
+  margin-block: clamp(1rem, 2vw, 1.25rem);
+  color: #777970;
+  font-size: clamp(0.75rem, 1vw, 0.875rem);
+}
+
+
+/* =========================================================
+   AI TRAVEL PLAN
+   ========================================================= */
+
+.ai-plan {
+  width: min(100%, 52rem);
+  margin: clamp(4rem, 8vw, 6rem) auto 0;
+}
+
+.ai-plan .section-heading {
+  margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
+  text-align: center;
+}
+
+.ai-plan .eyebrow {
+  color: #c47a61;
+}
+
+.ai-plan-content {
+  width: 100%;
+  margin-inline: auto;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  background: #1b1c18;
+  border: 0.0625rem solid #3a3b34;
+  border-top: 0.1875rem solid #b96f57;
+}
+
+.ai-plan-content p {
+  margin: 0;
+  color: #c9c5ba;
+  font-size: clamp(0.85rem, 1.2vw, 0.975rem);
+  line-height: 1.8;
+}
+
+.ai-plan-content p+p {
+  margin-top: clamp(0.6rem, 1.2vw, 0.8rem);
+}
+
+.ai-plan-content strong {
+  color: #eee9dc;
+  font-weight: 600;
+}
+
+.ai-plan-content h3 {
+  margin: clamp(1.5rem, 3vw, 2rem) 0 clamp(0.6rem, 1.2vw, 0.8rem);
+  color: #eee9dc;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.ai-plan-content h3:first-child {
+  margin-top: 0;
+}
+
+.plan-space {
+  height: clamp(0.5rem, 1vw, 0.75rem);
+}
+
+.plan-bullet {
+  position: relative;
+  padding-left: clamp(1.1rem, 2vw, 1.5rem);
+}
+
+.plan-bullet::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: #c47a61;
+}
+
+
+/* =========================================================
+   NEW TRIP
+   ========================================================= */
+
+.new-trip-button {
+  display: block;
+  margin: clamp(1.75rem, 4vw, 2.5rem) auto 0;
+  padding: clamp(0.65rem, 1.5vw, 0.85rem) clamp(1rem, 2vw, 1.25rem);
+  border: 0.0625rem solid #4a4b43;
+  border-radius: 0.125rem;
+  background: transparent;
+  color: #c4c0b8;
+  font-size: clamp(0.75rem, 1vw, 0.8125rem);
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.new-trip-button:hover {
+  border-color: #c47a61;
+  background: #1b1c18;
+  color: #eee9dc;
+}
+
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+
+.about-section {
+  border-top: 0.0625rem solid #303129;
+  background: #0f100d;
+}
+
+.about-inner {
+  width: min(92%, 70rem);
+  margin-inline: auto;
+  padding-block: clamp(4rem, 8vw, 6.5rem) clamp(4.5rem, 9vw, 7rem);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.about-inner .section-heading {
+  width: min(100%, 48rem);
+  margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+.about-inner .eyebrow {
+  color: #8f9979;
+}
+
+.about-inner .section-heading h2 {
+  margin: 0;
+  color: #eee9dc;
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  line-height: 1.02;
+  letter-spacing: -0.06em;
+}
+
+.about-text {
+  width: min(100%, 42rem);
+  margin: 0 auto;
+  color: #898a80;
+  font-size: clamp(0.85rem, 1.4vw, 1rem);
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   RESPONSIVE — NARROW SCREENS
+   ========================================================= */
+
+@media (max-width: 40rem) {
+
+  .navbar {
+    padding-inline: 5%;
+  }
+
+  .navbar nav {
+    gap: 1rem;
+  }
+
+  main {
+    width: min(94%, 70rem);
+  }
+
+  .hero h1 {
+    letter-spacing: -0.055em;
+  }
+
+  .planner-card {
+    padding: clamp(1.25rem, 5vw, 1.75rem);
+  }
+
+  .day-card {
+    grid-template-columns: 1fr;
+  }
+
+  .day-number {
+    border-right: none;
+    border-bottom: 0.0625rem solid #3a3b34;
+  }
+
+  .place {
+    gap: 1rem;
+  }
+
+  .place-score {
+    flex-basis: 3rem;
+    padding-left: 0.6rem;
+  }
+
+  .about-inner {
+    width: min(94%, 70rem);
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — VERY NARROW SCREENS
+   ========================================================= */
+
+@media (max-width: 25rem) {
+
+  .navbar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-block: 1rem;
+  }
+
+  .navbar nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .hero {
+    text-align: left;
+  }
+
+  .hero-text {
+    margin-inline: 0;
+  }
+
+  .place {
+    flex-direction: column;
+  }
+
+  .place-score {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0;
+    border-left: none;
+    text-align: left;
+  }
+
+  .place-score span {
+    margin: 0;
+  }
+}
