@@ -1,6 +1,6 @@
-# 🌍 TourVista
+# 🌍 TourVista - Discover Your Way
 
-> **AI-Powered Intelligent Travel Planning Platform**
+> **Intelligent Travel Planning Platform**
 
 TourVista is a full-stack travel planning platform that generates personalized travel itineraries by combining **places, weather, routes, recommendations, and AI-powered itinerary generation** into a single workflow.
 
